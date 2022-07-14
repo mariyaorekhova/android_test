@@ -7,4 +7,15 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="dark_background">#050B18</color>
+    <color name="rating_background">#F4D144</color>
+    <color name="grade_text">#45454D</color>
+    <color name="chip_text">#41A0E7</color>
+    <color name="chip_background">#3D44A9F4</color>
+    <color name="description">#B2EEF2FB</color>
+    <color name="date_text">#66FFFFFF</color>
+    <color name="review_text">#A8ADB7</color>
+    <color name="rating_underscore">#1A1F29</color>
+
 </resources>

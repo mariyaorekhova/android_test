@@ -1,11 +1,249 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@color/dark_background">
 
-    <!-- Место для верстки -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".MainActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/ivHeader"
+            android:layout_width="0dp"
+            android:layout_height="296dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@android:color/darker_gray" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="126dp"
+            android:background="@drawable/header_gradient"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivHeaderArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="56dp"
+            android:src="@drawable/ic_arrow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivHeaderDots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:layout_marginEnd="24dp"
+            android:src="@drawable/ic_dots"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/vLogoBackground"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="274dp"
+            android:background="@drawable/logo_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:src="@drawable/logo"
+            app:layout_constraintBottom_toBottomOf="@id/vLogoBackground"
+            app:layout_constraintEnd_toEndOf="@id/vLogoBackground"
+            app:layout_constraintStart_toStartOf="@id/vLogoBackground"
+            app:layout_constraintTop_toTopOf="@id/vLogoBackground" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:textAppearance="@style/UiKitV2.TextAppearance.Regular26_05"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/vLogoBackground"
+            app:layout_constraintTop_toBottomOf="@id/ivHeader"
+            tools:text="Dota2" />
+
+        <RatingBar
+            android:id="@+id/ratingHeader"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:progressBackgroundTint="@color/white"
+            android:progressTint="@color/rating_background"
+            android:secondaryProgressTint="@color/rating_background"
+            android:stepSize="0.1"
+            app:layout_constraintStart_toEndOf="@id/vLogoBackground"
+            app:layout_constraintTop_toBottomOf="@id/tvName"
+            tools:rating="2.2" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvGradeCnt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:textAppearance="@style/UiKitV2.TextAppearance.Regular14_05"
+            android:textColor="@color/grade_text"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/ratingHeader"
+            app:layout_constraintStart_toEndOf="@id/ratingHeader"
+            app:layout_constraintTop_toTopOf="@id/ratingHeader"
+            tools:text="70 M" />
+
+        <com.wefika.flowlayout.FlowLayout
+            android:id="@+id/chipsBoxLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vLogoBackground" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="24dp"
+            android:textAppearance="@style/UiKitV2.TextAppearance.Regular20"
+            android:textColor="@color/description"
+            android:textSize="12sp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chipsBoxLayout"
+            tools:text="@tools:sample/lorem[20]" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvReviewsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/review_ratings"
+            android:textAppearance="@style/UiKitV2.TextAppearance.Regular20_05"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDescription" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvRatingReviews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="12dp"
+            android:textAppearance="@style/UiKitV2.TextAppearance.Regular58_05"
+            android:textColor="@color/white"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvReviewsTitle"
+            tools:text="4.9" />
+
+        <RatingBar
+            android:id="@+id/ratingReviews"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:progressBackgroundTint="@color/white"
+            android:progressTint="@color/rating_background"
+            android:secondaryProgressTint="@color/rating_background"
+            android:stepSize="0.1"
+            app:layout_constraintBottom_toTopOf="@id/tvGradeReviews"
+            app:layout_constraintStart_toEndOf="@id/tvRatingReviews"
+            app:layout_constraintTop_toTopOf="@id/tvRatingReviews"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:rating="2.2" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvGradeReviews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:textAppearance="@style/UiKitV2.TextAppearance.Regular14_05"
+            android:textColor="@color/review_text"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvRatingReviews"
+            app:layout_constraintStart_toEndOf="@id/tvRatingReviews"
+            app:layout_constraintTop_toBottomOf="@id/ratingReviews"
+            tools:text="70 M Reviews" />
+
+        <View
+            android:id="@+id/ratingUnderscore"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="38dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/rating_underscore"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvRatingReviews" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvReviews"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ratingUnderscore"
+            tools:itemCount="2"
+            tools:listitem="@layout/item_review" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAction"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="80dp"
+            android:backgroundTint="@color/rating_background"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:cornerRadius="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvReviews"
+            tools:text="Install" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
